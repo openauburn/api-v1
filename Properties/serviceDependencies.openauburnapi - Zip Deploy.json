@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "apis1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ApiManagement/service/open-auburn-apimgmt/apis/open-auburn-api",
+      "type": "apis.azure"
+    }
+  }
+}
