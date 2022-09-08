@@ -17,6 +17,7 @@ namespace open_auburn_api.Models
         }
 
         public virtual DbSet<Crime> Crimes { get; set; } = null!;
+        public virtual DbSet<Fire> Fires { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -31,6 +32,11 @@ namespace open_auburn_api.Models
             modelBuilder.Entity<Crime>(entity =>
             {
                 entity.Property(e => e.Oaid).HasComputedColumnSql("(right('OACRI'+CONVERT([varchar](50),[ID]),(50)))", true);
+            });
+
+            modelBuilder.Entity<Fire>(entity =>
+            {
+                entity.Property(e => e.Oaid).HasComputedColumnSql("(right('OAFIR'+CONVERT([varchar](50),[ID]),(50)))", true);
             });
 
             OnModelCreatingPartial(modelBuilder);
