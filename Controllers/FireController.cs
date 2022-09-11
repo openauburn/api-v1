@@ -43,8 +43,6 @@ namespace open_auburn_api.Controllers
                     }
                 }
             }
-            Console.WriteLine(route);
-            Console.WriteLine(query);
             var validPFilter = new PaginationFilter(pfilter.PageNumber, pfilter.PageSize);
             var validFFilter = new FireFilter(ffilter.Campus, ffilter.FireDate, ffilter.MinFireDate, ffilter.MaxFireDate,
                 ffilter.FireTime, ffilter.MinFireTime, ffilter.MaxFireTime,

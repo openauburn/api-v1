@@ -24,7 +24,7 @@ namespace open_auburn_api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetSome([FromQuery] PaginationFilter pfilter, [FromQuery] CrimeFilter cfilter)
         {
-            var route = Request.Path.Value;
+            var route = Request.Path.Value;            
             var query = Request.QueryString.ToString();
             var split = query.Split("&");
             var newQuery = route;
@@ -43,8 +43,6 @@ namespace open_auburn_api.Controllers
                     }
                 }
             }
-            Console.WriteLine(route);
-            Console.WriteLine(query);
             var validPFilter = new PaginationFilter(pfilter.PageNumber, pfilter.PageSize);
             var validCFilter = new CrimeFilter(cfilter.Campus, cfilter.Date, cfilter.MinDate, cfilter.MaxDate, cfilter.IncidentType, cfilter.CleryClass, cfilter.Location);
 
