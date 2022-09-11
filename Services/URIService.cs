@@ -26,7 +26,7 @@ namespace open_auburn_api.Services
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<OpenAuburnContext>(options =>
-                options.UseSqlServer("Persist Security Info=False;Integrated Security=true;Server=tcp:openauburn.database.windows.net,1433;Initial Catalog=openauburn-db;",
+                options.UseSqlServer("",
                     b => b.MigrationsAssembly(typeof(OpenAuburnContext).Assembly.FullName)));
             services.AddHttpContextAccessor();
             services.AddSingleton<IURIService>(o =>
