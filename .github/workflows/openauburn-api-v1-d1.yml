@@ -1,4 +1,4 @@
-name: Build and deploy .NET Core application to Web App api-openauburn-e1-prod-001
+name: OA-API-V1 Deployment 1
 on:
   push:
     branches:
