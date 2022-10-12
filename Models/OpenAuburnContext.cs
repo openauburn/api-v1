@@ -18,39 +18,17 @@ namespace open_auburn_api.Models
 
         public virtual DbSet<Crime> Crimes { get; set; } = null!;
         public virtual DbSet<Fire> Fires { get; set; } = null!;
-        public virtual DbSet<College> Colleges { get; set; } = null!;
-        public virtual DbSet<Enrollment> Enrollments { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("");
+                optionsBuilder.UseSqlServer("Server=tcp:sqlserver-openauburn-e1-prod-001.database.windows.net,1433;Initial Catalog=db-openauburn-e1-prod-001;Persist Security Info=False;User ID=oa_reader;Password=w@r3@g!3d@t@s3t5;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Crime>(entity =>
-            {
-                entity.Property(e => e.Oaid).HasComputedColumnSql("(right('OACRI'+CONVERT([varchar](50),[ID]),(50)))", true);
-            });
-
-            modelBuilder.Entity<Fire>(entity =>
-            {
-                entity.Property(e => e.Oaid).HasComputedColumnSql("(right('OAFIR'+CONVERT([varchar](50),[ID]),(50)))", true);
-            });
-
-            modelBuilder.Entity<College>(entity =>
-            {
-                entity.Property(e => e.Oaid).HasComputedColumnSql("(right('OACOL'+CONVERT([varchar](50),[ID]),(50)))", true);
-            });
-
-            modelBuilder.Entity<Enrollment>(entity =>
-            {
-                entity.Property(e => e.Oaid).HasComputedColumnSql("(right('OAENR'+CONVERT([varchar](50),[ID]),(50)))", true);
-            });
-
             OnModelCreatingPartial(modelBuilder);
         }
 
