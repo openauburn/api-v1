@@ -16,7 +16,7 @@ namespace open_auburn_api.Filters
         public string? MaxDate { get; set; }
         public string? IncidentType { get; set; }
         public string? CleryClass { get; set; }
-        public string? Location { get; set; }
+        public string? Address { get; set; }
         public CrimeFilter()
         {
             this.Campus = "";
@@ -25,9 +25,9 @@ namespace open_auburn_api.Filters
             this.MaxDate = DateTime.MaxValue.ToString();
             this.IncidentType = "";
             this.CleryClass = "";
-            this.Location = "";
+            this.Address = "";
         }
-        public CrimeFilter(string campus, string date, string minDate, string maxDate, string incidentType, string cleryClass, string location)
+        public CrimeFilter(string campus, string date, string minDate, string maxDate, string incidentType, string cleryClass, string address)
         {
             this.Campus = string.IsNullOrEmpty(campus) ? "" : campus;
             this.Date = DateTime.TryParse(date, out DateTime tempDate) ? tempDate.ToString() : "";
@@ -35,7 +35,7 @@ namespace open_auburn_api.Filters
             this.MaxDate = DateTime.TryParse(maxDate, out DateTime tempMax) ? tempMax.ToString() : DateTime.MaxValue.ToString();
             this.IncidentType = string.IsNullOrEmpty(incidentType) ? "" : incidentType;
             this.CleryClass = string.IsNullOrEmpty(cleryClass) ? "" : cleryClass;
-            this.Location = string.IsNullOrEmpty(location) ? "" : location;
+            this.Address = string.IsNullOrEmpty(address) ? "" : address;
         }
     }
 }

@@ -6,39 +6,42 @@ using Microsoft.EntityFrameworkCore;
 
 namespace open_auburn_api.Models
 {
-    [Table("Crime")]
     public partial class Crime
     {
         [Key]
-        [Column("ID")]
+        [Column("id")]
         public int Id { get; set; }
-        [Column("OAID")]
-        [StringLength(50)]
-        [Unicode(false)]
-        public string? Oaid { get; set; }
-        [Column("IncidentID")]
+        [Column("incident_id")]
         public string? IncidentId { get; set; }
-        public string? Campus { get; set; }
-        [Column(TypeName = "date")]
-        public DateTime? DateReported { get; set; }
-        [Column(TypeName = "date")]
-        public DateTime? DateOccurredFrom { get; set; }
-        public TimeSpan? TimeOccurredFrom { get; set; }
-        [Column(TypeName = "date")]
-        public DateTime? DateOccurredTo { get; set; }
-        public TimeSpan? TimeOccurredTo { get; set; }
+        [Column("incident_type")]
         public string? IncidentType { get; set; }
+        [Column("clery_class")]
         public string? CleryClass { get; set; }
-        public string? AdditionalInfo { get; set; }
-        public string? Location { get; set; }
-        public double? Latitude { get; set; }
-        public double? Longitude { get; set; }
+        [Column("notes")]
+        public string? Notes { get; set; }
+        [Column("disposition")]
         public string? Disposition { get; set; }
-        [Column(TypeName = "date")]
-        public DateTime? DateOfSupplement { get; set; }
+        [Column("supplement_disposition")]
         public string? SupplementDisposition { get; set; }
-        [Column(TypeName = "date")]
-        public DateTime? DateOfSupplement2 { get; set; }
+        [Column("supplemented_on", TypeName = "date")]
+        public DateTime? SupplementedOn { get; set; }
+        [Column("supplement_disposition_2")]
         public string? SupplementDisposition2 { get; set; }
+        [Column("supplemented_on_2", TypeName = "date")]
+        public DateTime? SupplementedOn2 { get; set; }
+        [Column("reported_on", TypeName = "date")]
+        public DateTime? ReportedOn { get; set; }
+        [Column("started_at", TypeName = "datetime")]
+        public DateTime? StartedAt { get; set; }
+        [Column("ended_at", TypeName = "datetime")]
+        public DateTime? EndedAt { get; set; }
+        [Column("campus")]
+        public string? Campus { get; set; }
+        [Column("address")]
+        public string? Address { get; set; }
+        [Column("latitude")]
+        public double? Latitude { get; set; }
+        [Column("longitude")]
+        public double? Longitude { get; set; }
     }
 }
