@@ -8,36 +8,20 @@ namespace open_auburn_api.Filters
     public class FireFilter
     {
         public string? Campus { get; set; }
-        public string? FireDate { get; set; }
-        public string? MinFireDate { get; set; }
-        public string? MaxFireDate { get; set; }
-        public string? FireTime { get; set; }
-        public string? MinFireTime { get; set; }
-        public string? MaxFireTime { get; set; }
-        public string? DateReported { get; set; }
-        public string? MinDateReported { get; set; }
-        public string? MaxDateReported { get; set; }
+        public string? ReportedOn { get; set; }
+        public string? OccurredAt { get; set; }
         public string? Description { get; set; }
         public string? Cause { get; set; }
         public string? DamageCost { get; set; }
         public string? Injuries { get; set; }
         public string? Deaths { get; set; }
-        public string? Location { get; set; }
+        public string? Address { get; set; }
         public FireFilter()
         {
             this.Campus = "";
 
-            this.FireDate = "";
-            this.MinFireDate = DateTime.MinValue.ToString();
-            this.MaxFireDate = DateTime.MaxValue.ToString();
-
-            this.FireTime = "";
-            this.MinFireTime = "";
-            this.MaxFireTime = "";
-
-            this.DateReported = "";
-            this.MinDateReported = DateTime.MinValue.ToString();
-            this.MaxDateReported = DateTime.MaxValue.ToString();
+            this.OccurredAt = "";
+            this.ReportedOn = "";
 
             this.Description = "";
             this.Cause = "";
@@ -46,28 +30,18 @@ namespace open_auburn_api.Filters
             this.Injuries = "0";
             this.Deaths = "0";
 
-            this.Location = "";
+            this.Address = "";
         }
-        public FireFilter(string campus, string fireDate, string minFireDate, string maxFireDate, 
-            string fireTime, string minFireTime, string maxFireTime, 
-            string dateReported, string minDateReported, string maxDateReported,
+        public FireFilter(string campus, string fireDate, string dateReported,
             string description, string cause, string damageCost,
-            string injuries, string deaths, string location)
+            string injuries, string deaths, string address)
         {
             this.Campus = string.IsNullOrEmpty(campus) ? "" : campus;
 
-            this.FireDate = DateTime.TryParse(fireDate, out DateTime tempFireDate) ? tempFireDate.ToString() : "";
-            this.MinFireDate = DateTime.TryParse(minFireDate, out DateTime tempMinFireDate) ? tempMinFireDate.ToString() : DateTime.MinValue.ToString();
-            this.MaxFireDate = DateTime.TryParse(maxFireDate, out DateTime tempMaxFireDate) ? tempMaxFireDate.ToString() : DateTime.MinValue.ToString();
+            this.OccurredAt = DateTime.TryParse(fireDate, out DateTime tempFireDate) ? tempFireDate.ToString() : "";
 
-            this.FireTime = TimeSpan.TryParse(fireTime, out TimeSpan tempFireTime) ? tempFireTime.ToString() : "";
-            this.MinFireTime = TimeSpan.TryParse(minFireTime, out TimeSpan tempMinFireTime) ? tempMinFireTime.ToString() : "";
-            this.MaxFireTime = TimeSpan.TryParse(maxFireTime, out TimeSpan tempMaxFireTime) ? tempMaxFireTime.ToString() : "";
-
-            this.DateReported = DateTime.TryParse(dateReported, out DateTime tempDate) ? tempDate.ToString() : "";
-            this.MinFireDate = DateTime.TryParse(minDateReported, out DateTime tempMinDate) ? tempMinDate.ToString() : DateTime.MinValue.ToString();
-            this.MaxFireDate = DateTime.TryParse(maxDateReported, out DateTime tempMaxDate) ? tempMaxDate.ToString() : DateTime.MinValue.ToString();
-
+            this.ReportedOn = DateTime.TryParse(dateReported, out DateTime tempDate) ? tempDate.ToString() : "";
+           
             this.Description = string.IsNullOrEmpty(description) ? "" : description;
             this.Cause = string.IsNullOrEmpty(cause) ? "" : cause;
             this.DamageCost = string.IsNullOrEmpty(damageCost) ? "" : damageCost;
@@ -75,7 +49,7 @@ namespace open_auburn_api.Filters
             this.Injuries = int.TryParse(injuries, out int tempInjury) ? tempInjury.ToString() : "0";
             this.Deaths = int.TryParse(deaths, out int tempDeath) ? tempDeath.ToString() : "0";
 
-            this.Location = string.IsNullOrEmpty(location) ? "" : location;
+            this.Address = string.IsNullOrEmpty(address) ? "" : address;
         }
     }
 }
