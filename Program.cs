@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Microsoft.EntityFrameworkCore;
+using open_auburn_api;
 using open_auburn_api.Models;
 using open_auburn_api.Services;
 
@@ -18,7 +20,12 @@ builder.Services.AddSingleton<IURIService>(o =>
     return new URIService(uri);
 });
 
-builder.Services.AddControllers()
+builder.Services.AddControllers(
+    options =>
+        {
+            options.Conventions.Add(new RouteTokenTransformerConvention(
+                new SlugifyParameterTransformer()));
+        })
     .AddJsonOptions(options =>
     {
         options.JsonSerializerOptions.WriteIndented = true;
