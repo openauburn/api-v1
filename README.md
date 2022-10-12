@@ -6,6 +6,3 @@ https://api.openauburn.org is the base url for all endpoints
 
 ### /Fire
 
-### /College
-
-### /Enrollment
