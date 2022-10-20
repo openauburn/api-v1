@@ -4,6 +4,6 @@ namespace open_auburn_api.Services
 {
     public interface IURIService
     {
-        public Uri GetPageUri(PaginationFilter filter, string route);
+        public Uri GetPageUri(PaginationFilter filter, string route, string query);
     }
 }
