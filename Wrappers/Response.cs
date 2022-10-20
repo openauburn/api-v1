@@ -8,7 +8,7 @@
         public Response(T data)
         {
             Succeeded = true;
-            Message = string.Empty;
+            Message = null;
             Errors = null;
             Data = data;
         }
