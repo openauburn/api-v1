@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Routing;
 
-namespace open_auburn_api
+namespace open_auburn_api.Helpers
 {
     public class SlugifyParameterTransformer : IOutboundParameterTransformer
     {

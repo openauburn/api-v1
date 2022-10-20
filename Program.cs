@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using open_auburn_api;
 using open_auburn_api.Models;
 using open_auburn_api.Services;
+using open_auburn_api.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 
