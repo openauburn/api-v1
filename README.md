@@ -46,11 +46,13 @@ git clone https://github.com/openauburn/api-v1.git
 ## Setting up Visual Studio
 
 If you do not have Visual Studio, you may download the free community version [here](https://visualstudio.microsoft.com/vs/#download). \
-During the installation, make sure you download the **ASP.NET and web development** workload. \ \
+During the installation, make sure you download the **ASP.NET and web development** workload. \
 
 After Visual Studio is installed and configured, select **“Open a project or solution”**. This will open up File Explorer.
 
-![install-opensolution.png](OpenAuburn%20v1%20API%20specification%206aa8c27494f9469f8d09441e0ea85633/install-opensolution.png)
+<p align="center">
+    <img height=300 src="https://raw.githubusercontent.com/openauburn/api-v1/master/docs/assets/install-opensolution.png">
+</p>
 
 Browse to the folder containing the clone of this repository. \
 Continue to /OpenAuburnAPI and select the open-auburn-api.sln solution file. \
@@ -84,25 +86,29 @@ dotnet add package Swashbuckle.ASPNetCore
 
 Navigate to **Project** > **Manage NuGet Packages…**
 
-![Untitled](OpenAuburn%20v1%20API%20specification%206aa8c27494f9469f8d09441e0ea85633/Untitled.png)
+<p align="center">
+    <img height=400 src="https://raw.githubusercontent.com/openauburn/api-v1/master/docs/assets/install-projectpackages.png">
+</p>
 
 Install the required packages. **Browse** packages and search for / install the following:
 
-**Microsoft.AspNet.WebApi.WebHost**
+- **Microsoft.AspNet.WebApi.WebHost**
 
-**Microsoft.EntityFrameworkCore**
+- **Microsoft.EntityFrameworkCore**
 
-**Microsoft.EntityFrameworkCore.Design**
+- **Microsoft.EntityFrameworkCore.Design**
 
-**Microsoft.EntityFrameworkCore.SqlServer**
+- **Microsoft.EntityFrameworkCore.SqlServer**
 
-**Microsoft.EntityFrameworkCore.Tools**
+- **Microsoft.EntityFrameworkCore.Tools**
 
-**Swashbuckle.ASPNetCore**
+- **Swashbuckle.ASPNetCore**
 
 Your **Installed** tab in Nuget Package Manager should look like this:
 
-![install-packages.png](OpenAuburn%20v1%20API%20specification%206aa8c27494f9469f8d09441e0ea85633/install-packages.png)
+<p align="center">
+    <img height=300 src="https://raw.githubusercontent.com/openauburn/api-v1/master/docs/assets/install-packages.png">
+</p>
 
 For more information on installing packages visit [Microsoft’s tutorial.](https://learn.microsoft.com/en-us/nuget/consume-packages/install-use-packages-visual-studio)
 
@@ -124,7 +130,9 @@ This will generate an executable dll in your project and give you a path to it.
 
 Navigate to **********Build********** > **Build Solution** or hit Ctrl + Shift + B.
 
-![install-build.png](OpenAuburn%20v1%20API%20specification%206aa8c27494f9469f8d09441e0ea85633/install-build.png)
+<p align="center">
+    <img height=120 src="https://raw.githubusercontent.com/openauburn/api-v1/master/docs/assets/install-build.png">
+</p>
 
 <br>
 
@@ -142,7 +150,9 @@ dotnet <path-to>open-auburn-api.dll
 
 For a quick start, start without debugging by either hitting Ctrl + F5 or pressing the outlined green run button.
 
-![install-run.png](OpenAuburn%20v1%20API%20specification%206aa8c27494f9469f8d09441e0ea85633/install-run.png)
+<p align="center">
+    <img height=120 src="https://raw.githubusercontent.com/openauburn/api-v1/master/docs/assets/install-run.png">
+</p>
 
 <br>
 
