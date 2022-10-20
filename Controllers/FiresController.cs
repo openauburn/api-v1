@@ -6,6 +6,7 @@ using open_auburn_api.Helpers;
 using open_auburn_api.Services;
 using open_auburn_api.Wrappers;
 
+#nullable enable
 namespace open_auburn_api.Controllers
 {
     [Route("/v1/[controller]")]

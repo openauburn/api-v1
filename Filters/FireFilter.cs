@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore.ValueGeneration.Internal;
 using Microsoft.Win32;
 using System.ComponentModel.DataAnnotations.Schema;
 
+#nullable enable
 namespace open_auburn_api.Filters
 {
     public class FireFilter
