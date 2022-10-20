@@ -6,11 +6,11 @@ OpenAuburn provides an API for accessing its database. API requests are made to 
 
 ## /v1/crimes
 
-Crime reports on or around Auburn University’s campuses
+Crime reports on or around Auburn University’s campuses.
 
 ## /v1/fires
 
-Fire reports on or around Auburn University’s campuses
+Fire reports on or around Auburn University’s campuses.
 
 ## /v1/datasets
 
