@@ -25,25 +25,9 @@ namespace open_auburn_api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetSome([FromQuery] PaginationFilter pfilter, [FromQuery] CrimeFilter cfilter)
         {
-            var route = Request.Path.Value;            
-            var query = Request.QueryString.ToString();
-            var split = query.Split("&");
-            var newQuery = route;
-            if (split.Length > 0)
-            {
-                for (int i = 0; i < split.Length; i += 1)
-                {
-                    var n = split[i].ToLower();
-                    if (!n.Contains("pagenumber") && !n.Contains("pagesize"))
-                    {
-                        newQuery += n;
-                        if (i < split.Length - 1)
-                        {
-                            newQuery += "&";
-                        }
-                    }
-                }
-            }
+            var route = Request.Path.Value;
+            var query = PaginationHelper.IsolateFilterQuery(Request.QueryString.ToString());
+
             var validPFilter = new PaginationFilter(pfilter.PageNumber, pfilter.PageSize);
             var validCFilter = new CrimeFilter(cfilter.Campus, cfilter.Date, cfilter.MinDate, cfilter.MaxDate, cfilter.IncidentType, cfilter.CleryClass, cfilter.Address);
 
@@ -63,7 +47,7 @@ namespace open_auburn_api.Controllers
                 .Skip((validPFilter.PageNumber - 1) * validPFilter.PageSize)
                 .Take(validPFilter.PageSize)
                 .ToList();
-            var pagedReponse = PaginationHelper.CreatePagedReponse<Crime>(pagedData, validPFilter, totalRecords, _uriService, newQuery);
+            var pagedReponse = PaginationHelper.CreatePagedReponse<Crime>(pagedData, validPFilter, totalRecords, _uriService, route, query);
             return Ok(pagedReponse);
         }
 
