@@ -158,6 +158,31 @@ For a quick start, start without debugging by either hitting Ctrl + F5 or pressi
 
 <br>
 
+### Configuring Swagger
+Swagger is an open source API development tool that maintains an OpenAPI-compatible definition for our API. \
+By default, OpenAuburn has Swagger configured to always run with the API. \
+You can change this in your own environment by configuring the following in your **Program.cs** file.
+```csharp
+if (app.Environment.IsProduction())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+```
+Swagger will also attempt to open a GUI in your browser on startup. You can disable this in your Properties > launchSettings.json file.
+```json
+"open_auburn_api": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "launchUrl": "swagger",
+      "applicationUrl": "https://localhost:7175;http://localhost:5175",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+}
+```
+
 ## Next Steps
 
 Congratulations, your instance of the OpenAuburn API is running! Here are some next steps for expanding on our service:
