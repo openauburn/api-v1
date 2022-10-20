@@ -16,8 +16,6 @@ namespace open_auburn_api.Services
         }
         public Uri GetPageUri(PaginationFilter filter, string route, string query)
         {
-            Console.WriteLine(_uri);
-            Console.WriteLine(route);
             var _enpointUri = new Uri(string.Concat(_uri, route));
             var modifiedUri = QueryHelpers.AddQueryString(_enpointUri.ToString(), "page_number", filter.PageNumber.ToString());
             modifiedUri = QueryHelpers.AddQueryString(modifiedUri, "page_size", filter.PageSize.ToString());
