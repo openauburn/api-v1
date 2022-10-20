@@ -46,7 +46,7 @@ git clone https://github.com/openauburn/api-v1.git
 ## Setting up Visual Studio
 
 If you do not have Visual Studio, you may download the free community version [here](https://visualstudio.microsoft.com/vs/#download). \
-During the installation, make sure you download the **ASP.NET and web development** workload. \
+During the installation, make sure you download the **ASP.NET and web development** workload.
 
 After Visual Studio is installed and configured, select **“Open a project or solution”**. This will open up File Explorer.
 
@@ -165,7 +165,7 @@ Congratulations, your instance of the OpenAuburn API is running! Here are some n
 - Implementing a filter
 - Formatting data models
 
-You can also see high-level explanations of the file structure here.
+You can also see high-level explanations of the file structure [here](https://github.com/openauburn/api-v1/tree/master/OpenAuburnAPI#readme).
 
 <br>
 
