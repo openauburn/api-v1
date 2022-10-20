@@ -1,7 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.EntityFrameworkCore.ValueGeneration.Internal;
 using Microsoft.Win32;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Xml.Linq;
 
 #nullable enable
 namespace open_auburn_api.Filters
@@ -12,10 +14,14 @@ namespace open_auburn_api.Filters
         [Column(TypeName = "date")]
         public string? Date { get; set; }
         [Column(TypeName = "date")]
+        [FromQuery(Name = "min_date")]
         public string? MinDate { get; set; }
         [Column(TypeName = "date")]
+        [FromQuery(Name = "max_date")]
         public string? MaxDate { get; set; }
+        [FromQuery(Name = "indcident_type")]
         public string? IncidentType { get; set; }
+        [FromQuery(Name = "clery_class")]
         public string? CleryClass { get; set; }
         public string? Address { get; set; }
         public CrimeFilter()

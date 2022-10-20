@@ -1,8 +1,13 @@
-﻿namespace open_auburn_api.Filters
+﻿using Microsoft.AspNetCore.Mvc;
+using System.Xml.Linq;
+
+namespace open_auburn_api.Filters
 {
     public class PaginationFilter
     {
+        [FromQuery(Name = "page_number")]
         public int PageNumber { get; set; }
+        [FromQuery(Name = "page_size")]
         public int PageSize { get; set; }
         public PaginationFilter()
         {

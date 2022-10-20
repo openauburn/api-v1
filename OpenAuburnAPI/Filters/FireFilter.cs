@@ -1,7 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.EntityFrameworkCore.ValueGeneration.Internal;
 using Microsoft.Win32;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Xml.Linq;
 
 #nullable enable
 namespace open_auburn_api.Filters
@@ -9,10 +11,13 @@ namespace open_auburn_api.Filters
     public class FireFilter
     {
         public string? Campus { get; set; }
+        [FromQuery(Name = "reported_on")]
         public string? ReportedOn { get; set; }
+        [FromQuery(Name = "occurred_at")]
         public string? OccurredAt { get; set; }
         public string? Description { get; set; }
         public string? Cause { get; set; }
+        [FromQuery(Name = "damage_cost")]
         public string? DamageCost { get; set; }
         public string? Injuries { get; set; }
         public string? Deaths { get; set; }
