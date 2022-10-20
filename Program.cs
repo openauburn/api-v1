@@ -30,6 +30,7 @@ builder.Services.AddControllers(
     .AddJsonOptions(options =>
     {
         options.JsonSerializerOptions.WriteIndented = true;
+        options.JsonSerializerOptions.PropertyNamingPolicy = new SlugNamingPolicy();
     });
 
 
