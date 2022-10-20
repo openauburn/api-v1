@@ -18,6 +18,7 @@ namespace open_auburn_api.Models
 
         public virtual DbSet<Crime> Crimes { get; set; } = null!;
         public virtual DbSet<Fire> Fires { get; set; } = null!;
+        public virtual DbSet<Dataset> Datasets { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
