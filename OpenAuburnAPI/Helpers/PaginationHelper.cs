@@ -32,7 +32,6 @@ namespace open_auburn_api.Helpers
         {
             var onlyFilter = string.Empty;
             var querySplit = query.Split("?");
-            Console.WriteLine(querySplit[1]);
             if (querySplit.Length > 1)
             {
                 var split = querySplit[1].Split("&");
