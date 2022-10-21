@@ -10,8 +10,6 @@ using open_auburn_api.Wrappers;
 namespace open_auburn_api.Controllers
 {
     [Route("/v1/[controller]")]
-    [Route("/")]
-
     [ApiController]
     public class DatasetsController : ControllerBase
     {
