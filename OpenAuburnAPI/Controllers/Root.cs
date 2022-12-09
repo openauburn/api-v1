@@ -5,7 +5,8 @@ using open_auburn_api.Filters;
 using open_auburn_api.Helpers;
 using open_auburn_api.Services;
 using open_auburn_api.Wrappers;
-using static System.Net.Mime.MediaTypeNames;
+using System.Net;
+using System.Reflection;
 
 #nullable enable
 namespace open_auburn_api.Controllers
@@ -44,12 +45,25 @@ namespace open_auburn_api.Controllers
         [HttpGet("favicon.ico")]
         public IActionResult GetFavicon()
         {
-            return Ok("meep");
+
+
+            /*byte[] b = System.IO.File.ReadAllBytes(@".\favicon.ico");
+            return File(b, "image/x-icon");*/
+
+            var image = System.IO.File.OpenRead(@".\favicon.ico");
+            var exists = System.IO.File.Exists(@".\favicon.ico");
+            return Ok(exists);
+            /*            return File(image, "image/x-icon");
+            */
         }
 
 
         [HttpGet("Error")]
         public IActionResult GetError() =>
             Problem("Something went wrong.");
+
+        public class ImageFormat
+        {
+        }
     }
 }
