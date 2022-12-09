@@ -50,8 +50,8 @@ namespace open_auburn_api.Controllers
             /*byte[] b = System.IO.File.ReadAllBytes(@".\favicon.ico");
             return File(b, "image/x-icon");*/
 
-            var image = System.IO.File.OpenRead(@".\favicon.ico");
-            var exists = System.IO.File.Exists(@".\favicon.ico");
+/*            var image = System.IO.File.OpenRead(@".\favicon.ico");
+*/            var exists = System.IO.File.Exists(@".\favicon.ico");
             return Ok(exists);
             /*            return File(image, "image/x-icon");
             */
