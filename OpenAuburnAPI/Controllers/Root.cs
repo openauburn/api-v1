@@ -7,6 +7,7 @@ using open_auburn_api.Services;
 using open_auburn_api.Wrappers;
 using System.Net;
 using System.Reflection;
+using static System.Net.Mime.MediaTypeNames;
 
 #nullable enable
 namespace open_auburn_api.Controllers
@@ -50,8 +51,9 @@ namespace open_auburn_api.Controllers
             /*byte[] b = System.IO.File.ReadAllBytes(@".\favicon.ico");
             return File(b, "image/x-icon");*/
 
-/*            var image = System.IO.File.OpenRead(@".\favicon.ico");
-*/            var exists = System.IO.File.Exists(@".\favicon.ico");
+            /*            var image = System.IO.File.OpenRead(@".\favicon.ico");
+            */
+            var exists = System.IO.File.Exists(@"web.config");
             return Ok(exists);
             /*            return File(image, "image/x-icon");
             */
