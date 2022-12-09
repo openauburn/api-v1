@@ -45,7 +45,7 @@ namespace open_auburn_api.Controllers
         {
             byte[] b = System.IO.File.ReadAllBytes(@"..\favicon.ico");
             Response.ContentType = "image/x-icon";
-            return File(b, "image/x-icon");
+            return Ok(File(b, "image/x-icon"));
         }
 
         [HttpGet("Error")]
