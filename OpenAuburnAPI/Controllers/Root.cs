@@ -53,7 +53,12 @@ namespace open_auburn_api.Controllers
 
             /*            var image = System.IO.File.OpenRead(@".\favicon.ico");
             */
-            var exists = System.IO.File.Exists(@"web.config");
+            var exists = System.IO.File.Exists(@".\favicon.ico");
+            if (exists)
+            {
+                var image = System.IO.File.OpenRead(@".\favicon.ico");
+                return File(image, "image/x-icon");
+            }
             return Ok(exists);
             /*            return File(image, "image/x-icon");
             */
