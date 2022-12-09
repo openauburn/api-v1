@@ -43,7 +43,7 @@ namespace open_auburn_api.Controllers
         [HttpGet("favicon.ico")]
         public IActionResult GetFavicon()
         {
-            byte[] b = System.IO.File.ReadAllBytes(@".\favicon.ico");
+            byte[] b = System.IO.File.ReadAllBytes(@"..\favicon.ico");
             Response.ContentType = "image/x-icon";
             return File(b, "image/x-icon");
         }
