@@ -5,6 +5,7 @@ using open_auburn_api.Filters;
 using open_auburn_api.Helpers;
 using open_auburn_api.Services;
 using open_auburn_api.Wrappers;
+using static System.Net.Mime.MediaTypeNames;
 
 #nullable enable
 namespace open_auburn_api.Controllers
@@ -43,10 +44,9 @@ namespace open_auburn_api.Controllers
         [HttpGet("favicon.ico")]
         public IActionResult GetFavicon()
         {
-            byte[] b = System.IO.File.ReadAllBytes(@".\favicon.ico");
-            Response.ContentType = "image/x-icon";
-            return File(b, "image/x-icon");
+            return PhysicalFile(@"C:\favicon.ico", "image/x-icon");
         }
+
 
         [HttpGet("Error")]
         public IActionResult GetError() =>
