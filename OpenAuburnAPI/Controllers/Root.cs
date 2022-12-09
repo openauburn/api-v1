@@ -44,7 +44,7 @@ namespace open_auburn_api.Controllers
         [HttpGet("favicon.ico")]
         public IActionResult GetFavicon()
         {
-            return PhysicalFile(@"C:\favicon.ico", "image/x-icon");
+            return Ok("meep");
         }
 
 
